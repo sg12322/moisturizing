@@ -71,6 +71,9 @@ public class CategoryController {
     public R updateSort(@RequestBody CategoryEntity[] category){
         categoryService.updateBatchById(Arrays.asList(category));
 
+
+
+
         return R.ok();
     }
 
