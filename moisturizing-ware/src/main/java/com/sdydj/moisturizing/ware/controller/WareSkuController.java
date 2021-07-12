@@ -1,14 +1,12 @@
 package com.sdydj.moisturizing.ware.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.sdydj.moisturizing.ware.vo.SkuHasStockVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.sdydj.moisturizing.ware.entity.WareSkuEntity;
 import com.sdydj.moisturizing.ware.service.WareSkuService;
@@ -30,6 +28,16 @@ public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
 
+
+    /**
+     * 查看是否有库存
+     */
+    @PostMapping("/hasstock")
+    public  R getSkuHasStock(@RequestBody List<Long> skuIds){
+       List<SkuHasStockVo> vos= wareSkuService.getSkusHasStock(skuIds);
+
+        return R.ok().setData(vos);
+    }
     /**
      * 列表
      */

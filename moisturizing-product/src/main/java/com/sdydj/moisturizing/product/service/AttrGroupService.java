@@ -3,7 +3,9 @@ package com.sdydj.moisturizing.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sdydj.common.utils.PageUtils;
 import com.sdydj.moisturizing.product.entity.AttrGroupEntity;
+import com.sdydj.moisturizing.product.vo.AtrrGroupWithAttrVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,12 @@ import java.util.Map;
 public interface AttrGroupService extends IService<AttrGroupEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+
+
+    PageUtils queryPage(Map<String, Object> params, Long catelogId);
+
+    List<AtrrGroupWithAttrVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
+
 }
 

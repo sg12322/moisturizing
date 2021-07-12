@@ -24,5 +24,6 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>moisrurizing-common</module>
+
     </modules>
 </project>

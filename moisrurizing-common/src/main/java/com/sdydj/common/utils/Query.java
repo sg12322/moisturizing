@@ -23,6 +23,8 @@ import java.util.Map;
  */
 public class Query<T> {
 
+    private long curPage;
+
     public IPage<T> getPage(Map<String, Object> params) {
         return this.getPage(params, null, false);
     }

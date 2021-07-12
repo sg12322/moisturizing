@@ -8,6 +8,17 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tDnEqYiGqgYSarCDzoF
+      secret-key: 7f72NOOZjxIYjkcj5zQpphjCT4Ewi8
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+  jackson:
+    date-format: yyyy-MM-dd HH-mm-ss
+  thymeleaf:
+    cache: false
+
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -20,4 +31,6 @@ server:
 logging:
   level:
     com.sdydj.moisturizing: debug
+
+
 

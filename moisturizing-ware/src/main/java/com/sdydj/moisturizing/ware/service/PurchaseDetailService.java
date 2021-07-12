@@ -3,7 +3,9 @@ package com.sdydj.moisturizing.ware.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sdydj.common.utils.PageUtils;
 import com.sdydj.moisturizing.ware.entity.PurchaseDetailEntity;
+import com.sdydj.moisturizing.ware.entity.PurchaseEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,9 @@ import java.util.Map;
 public interface PurchaseDetailService extends IService<PurchaseDetailEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+
+    List<PurchaseDetailEntity> ListDetailByIdPurchase(Long id);
+
 }
 

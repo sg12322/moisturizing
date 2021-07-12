@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tDnEqYiGqgYSarCDzoF
+      secret-key: 7f72NOOZjxIYjkcj5zQpphjCT4Ewi8
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+        bucket: sdydj-moisturizing
+
+  application:
+    name: moisturizing-third-party
+
+
+server:
+  port: 30000
+

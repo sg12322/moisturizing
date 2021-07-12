@@ -2,8 +2,10 @@ package com.sdydj.moisturizing.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sdydj.common.utils.PageUtils;
+import com.sdydj.moisturizing.product.entity.BrandEntity;
 import com.sdydj.moisturizing.product.entity.CategoryBrandRelationEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,14 @@ import java.util.Map;
 public interface CategoryBrandRelationService extends IService<CategoryBrandRelationEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void saveDetail(CategoryBrandRelationEntity categoryBrandRelation);
+
+    void updataBrand(Long brandId, String name);
+
+    void updataCategory(Long catId, String name);
+
+    List<BrandEntity> getBrands(Long catId);
+
 }
 
