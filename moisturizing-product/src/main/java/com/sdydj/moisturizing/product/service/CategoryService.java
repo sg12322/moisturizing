@@ -3,6 +3,7 @@ package com.sdydj.moisturizing.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sdydj.common.utils.PageUtils;
 import com.sdydj.moisturizing.product.entity.CategoryEntity;
+import com.sdydj.moisturizing.product.vo.Catelog2Vo;
 
 import java.util.List;
 import java.util.Map;
@@ -36,5 +37,9 @@ public interface CategoryService extends IService<CategoryEntity> {
      * @param category
      */
     void updateDetail(CategoryEntity category);
+
+    List<CategoryEntity> getLeavel1Categotys();
+
+    Map<String, List<Catelog2Vo>> getCatalogJson();
 }
 

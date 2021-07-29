@@ -49,3 +49,10 @@ spring:
             - RewritePath= /api/?(?<segment>.*),/renren-fast/$\{segment}
 
 
+        - id: moisturizing_host_route
+          uri: lb://moisturizing-product
+          predicates:
+            - Host=**.moisturizing.com,moisturizing.com
+          #- Host=**.somehost.org,**.anotherhost.org
+
+

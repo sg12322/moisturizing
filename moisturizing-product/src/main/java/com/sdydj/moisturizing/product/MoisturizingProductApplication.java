@@ -11,8 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  *整合mybatis-plus
  * 1导入依赖
- * 2配置
- *   配置数据源
+` * 2配置
+` *   配置数据源
  *      导入驱动
  *       在application.yml配置数据源相关信息
  *   配置mybatis-plus
@@ -49,6 +49,41 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *      编写异常处理类 使用@ControllerAdvice
  *     使用@ExceptionHandler 标注方法 处理异常
  *
+ *
+ *   模板引擎
+ *      thymnleaf-starter 关闭缓存
+ *      静态资源放在static文件夹下就可以按照路径直接访问
+ *      页面放在templates下，直接访问
+ *      springboot访问项目的时候默认会找index
+ *      页面修改不重启服务器实时更新（引入dev—tolls  修改完页面 ctrl+f9(buildproject)）  代码配置推荐重启
+*
+ *
+ *
+ *   整合redis
+ *      引入 data-redis-starter
+ *      简单配置redis的host port信息
+ *      使用springboot自动配置好的StringRedisTemplate来操作redis
+ *       redis->map   redis存放数据按照key 数据值 value
+ *
+ *
+ *   整合redisson作为分布式锁等功能框架
+ *       引入依赖
+ *         <dependency>
+ *             <groupId>org.redisson</groupId>
+ *             <artifactId>redisson</artifactId>
+ *             <version>3.16.0</version>
+ *         </dependency>
+ *
+ * 整合Springcache简化缓存
+ *      引入依赖 spring-boot-starter-cache     spring-boot-starter-data-redis
+ *      写配置  自动配置了哪些    cacheAutoConfigration会导入RedisCacheConfiguration
+ *      配置使用redis作为缓存
+ *      测试使用缓存
+ *          @Cacheable: Triggers cache population. 触发将数据保存到缓存的操作
+ *          @CacheEvict: Triggers cache eviction.
+ *          @CachePut: Updates the cache without interfering with the method execution.
+ *          @Caching: Regroups multiple cache operations to be applied on a method.
+ *          @CacheConfig: Shares some common cache-related settings at class-level.
  *
  */
 @EnableFeignClients("com.sdydj.moisturizing.product.feign")
